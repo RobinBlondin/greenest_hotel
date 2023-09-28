@@ -1,0 +1,10 @@
+public class Carnivorous extends Vegetation {
+    public Carnivorous(String name, double height) {
+        super(name, height);
+    }
+
+    @Override
+    public void waterPlant() {
+
+    }
+}
