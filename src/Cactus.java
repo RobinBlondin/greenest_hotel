@@ -5,7 +5,7 @@ public class Cactus extends Vegetation{
     }
 
     @Override
-    public void waterPlant() {
+    public double waterPlant() {
 
     }
 }

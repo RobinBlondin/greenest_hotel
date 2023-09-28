@@ -4,7 +4,7 @@ public class PalmTree extends Vegetation {
     }
 
     @Override
-    public void waterPlant() {
+    public double waterPlant() {
 
     }
 }

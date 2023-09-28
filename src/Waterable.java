@@ -1,3 +1,3 @@
 public interface Waterable {
-    void waterPlant();
+    double waterPlant();
 }
