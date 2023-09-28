@@ -1,6 +1,26 @@
-public class Main {
-    public static void main(String[] args) {
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
+public class Main {
+
+    public static void main(String[] args) {
+        Main m = new Main();
+        List<Vegetation> plantList = m.createObjects();
+
+        String input = JOptionPane.showInputDialog(null, "Please enter the name of the plant to be watered.").trim();
+        double amountOfWater = 0;
+        String className = "";
+
+        for (Vegetation plant : plantList) {
+            if(input.equalsIgnoreCase(plant.getName())) {
+                amountOfWater = plant.waterPlant();
+                className = plant.getClass().getName();
+            }
+        }
+
+        String foodSource = m.getFoodSource(className);
+        m.outputMessage(amountOfWater, foodSource);
     }
 
     private List<Vegetation> createObjects() {
