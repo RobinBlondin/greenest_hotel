@@ -5,6 +5,6 @@ public class PalmTree extends Vegetation {
 
     @Override
     public double waterPlant() {
-        return 0.0;
+        return this.getHeight() * 0.5;
     }
 }
