@@ -5,6 +5,6 @@ public class Carnivorous extends Vegetation {
 
     @Override
     public double waterPlant() {
-        return 0.0;
+        return 0.1 + (this.getHeight() * 0.2);
     }
 }
