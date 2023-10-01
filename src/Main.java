@@ -90,4 +90,13 @@ public class Main {
         JOptionPane.showMessageDialog(null, message, "result", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    private void errorMessage(String message) {
+        JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+
+    private void clearGlobals(Main m) {
+        m.amountOfWater = 0;
+        m.nameOfClass = null;
+    }
+
 }
