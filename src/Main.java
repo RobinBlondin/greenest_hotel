@@ -3,6 +3,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+    private final String INPUT_MSG = "Please enter the name of the plant to be watered.";
+    private final String INPUT_ERROR = "Couldn't find plant. Please try again!";
+
+    private final String INPUT_EMPTY = "You must enter something. Please try again!";
+    private double amountOfWater;
+    private String nameOfClass;
 
     public static void main(String[] args) {
         Main m = new Main();
