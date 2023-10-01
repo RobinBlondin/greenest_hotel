@@ -54,7 +54,7 @@ public class Main {
         for (Vegetation plant : plantList) {
             if(input.equalsIgnoreCase(plant.getName())) {
                 amountOfWater = plant.waterPlant();
-                className = plant.getClass().getName();
+                nameOfClass = plant.getClass().getName().toUpperCase();
             }
         }
 
