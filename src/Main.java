@@ -1,6 +1,4 @@
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     private final String INPUT_MSG = "Please enter the name of the plant to be watered.";
