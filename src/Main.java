@@ -12,12 +12,45 @@ public class Main {
 
     public static void main(String[] args) {
         Main m = new Main();
-        List<Vegetation> plantList = m.createObjects();
 
-        String input = JOptionPane.showInputDialog(null, "Please enter the name of the plant to be watered.").trim();
-        double amountOfWater = 0;
-        String className = "";
+        while(true){
+            if (!m.greenestHotel(m)) {
+                break;
+            } else {
+                m.clearGlobals(m);
+            }
+        }
+    }
 
+    private boolean greenestHotel(Main m) {
+        Vegetation[] listOfPlants = {
+            new Cactus("Igge", 0.2),
+            new PalmTree("Laura", 0.5),
+            new PalmTree("Olof", 1),
+            new Carnivorous("Meatloaf", 0.7)
+        };
+
+        String input = JOptionPane.showInputDialog(null, m.INPUT_MSG,"Greenest hotel", JOptionPane.QUESTION_MESSAGE);
+
+        if (input == null) {
+            return false;
+        } else if (input.isEmpty()) {
+            errorMessage(m.INPUT_EMPTY);
+            return true;
+        }
+
+        loopThroughList(listOfPlants, input.trim());
+
+        try {
+            String foodSource = m.getFoodSource(nameOfClass);
+            m.outputMessage(amountOfWater, foodSource);
+        } catch(IllegalArgumentException e) {
+            m.errorMessage(m.INPUT_ERROR);
+        }
+        return true;
+    }
+
+    private void loopThroughList(Vegetation[] plantList, String input) {
         for (Vegetation plant : plantList) {
             if(input.equalsIgnoreCase(plant.getName())) {
                 amountOfWater = plant.waterPlant();
