@@ -55,19 +55,6 @@ public class Main {
                 nameOfClass = plant.getClass().getName().toUpperCase();
             }
         }
-
-        String foodSource = m.getFoodSource(className);
-        m.outputMessage(amountOfWater, foodSource);
-    }
-
-    private List<Vegetation> createObjects() {
-        List<Vegetation> list = new ArrayList<>();
-        list.add(new Cactus("Igge", 0.2));
-        list.add(new PalmTree("Laura", 0.5));
-        list.add(new PalmTree("Olof", 1));
-        list.add(new Carnivorous("Meatloaf", 0.7));
-
-        return list;
     }
 
     private String getFoodSource(String nameOfClass) {
