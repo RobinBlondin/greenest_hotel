@@ -1,11 +1,11 @@
 import javax.swing.*;
 
 public class Main {
+    //inkapsling
     private final String INPUT_MSG = "Please enter the name of the plant to be watered.";
     private final String INPUT_ERROR = "Couldn't find plant. Please try again!";
-
     private final String INPUT_EMPTY = "You must enter something. Please try again!";
-    private double amountOfWater;
+    private double fluidAmount;
     private String nameOfClass;
 
     public static void main(String[] args) {
@@ -37,21 +37,21 @@ public class Main {
             return true;
         }
 
-        loopThroughList(listOfPlants, input.trim());
+        findPlant(listOfPlants, input.trim());
 
         try {
             String foodSource = m.getFoodSource(nameOfClass);
-            m.outputMessage(amountOfWater, foodSource);
+            m.outputMessage(fluidAmount, foodSource);
         } catch(IllegalArgumentException e) {
             m.errorMessage(m.INPUT_ERROR);
         }
         return true;
     }
 
-    private void loopThroughList(Vegetation[] plantList, String input) {
+    private void findPlant(Vegetation[] plantList, String input) {
         for (Vegetation plant : plantList) {
             if(input.equalsIgnoreCase(plant.getName())) {
-                amountOfWater = plant.waterPlant();
+                fluidAmount = plant.waterPlant();
                 nameOfClass = plant.getClass().getName().toUpperCase();
             }
         }
@@ -64,14 +64,13 @@ public class Main {
         } catch (NullPointerException e) {
             return "";
         }
-
     }
 
-    private void outputMessage(double amountOfWater, String foodSource) {
-        if (amountOfWater == 0 || foodSource.isEmpty()) {
+    private void outputMessage(double fluidAmount, String foodSource) {
+        if (fluidAmount == 0 || foodSource.isEmpty()) {
             throw new IllegalArgumentException();
         }
-        String message = String.format("You need to feed the plant with %.2f litres of %s", amountOfWater, foodSource);
+        String message = String.format("You need to feed the plant with %.2f litres of %s", fluidAmount, foodSource);
         JOptionPane.showMessageDialog(null, message, "result", JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -80,7 +79,7 @@ public class Main {
     }
 
     private void clearGlobals(Main m) {
-        m.amountOfWater = 0;
+        m.fluidAmount = 0;
         m.nameOfClass = null;
     }
 

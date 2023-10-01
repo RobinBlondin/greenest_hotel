@@ -1,4 +1,5 @@
 abstract class Vegetation implements Waterable {
+    //inkapsling
     private String name;
     private double height;
 

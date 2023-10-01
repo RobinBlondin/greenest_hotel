@@ -4,6 +4,7 @@ public class Cactus extends Vegetation{
         super(name, height);
     }
 
+    //polymorphism
     @Override
     public double waterPlant() {
         return 0.02;

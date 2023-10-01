@@ -3,6 +3,7 @@ public class PalmTree extends Vegetation {
         super(name, height);
     }
 
+    //Polymorphism
     @Override
     public double waterPlant() {
         return this.getHeight() * 0.5;

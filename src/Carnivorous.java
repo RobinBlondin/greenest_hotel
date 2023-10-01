@@ -3,6 +3,7 @@ public class Carnivorous extends Vegetation {
         super(name, height);
     }
 
+    //Polymorphism
     @Override
     public double waterPlant() {
         return 0.1 + (this.getHeight() * 0.2);
