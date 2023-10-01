@@ -72,21 +72,14 @@ public class Main {
         return list;
     }
 
-    private String getFoodSource(String className) {
-        switch(className) {
-            case "Cactus" -> {
-                return FoodSource.MINERAL_WATER.foodSource;
-            }
-            case "PalmTree" -> {
-                return FoodSource.TAP_WATER.foodSource;
-            }
-            case "Carnivorous" -> {
-                return FoodSource.PROTEIN_SHAKE.foodSource;
-            }
-            default -> {
-                return "";
-            }
+    private String getFoodSource(String nameOfClass) {
+        try {
+            TypeOfPlant pt = TypeOfPlant.valueOf(nameOfClass);
+            return pt.getFoodSource();
+        } catch (NullPointerException e) {
+            return "";
         }
+
     }
 
     private void outputMessage(double amountOfWater, String foodSource) {
