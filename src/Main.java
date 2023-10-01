@@ -83,6 +83,9 @@ public class Main {
     }
 
     private void outputMessage(double amountOfWater, String foodSource) {
+        if (amountOfWater == 0 || foodSource.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
         String message = String.format("You need to feed the plant with %.2f litres of %s", amountOfWater, foodSource);
         JOptionPane.showMessageDialog(null, message, "result", JOptionPane.INFORMATION_MESSAGE);
     }
