@@ -1,12 +1,24 @@
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     //inkapsling
     private final String INPUT_MSG = "Please enter the name of the plant to be watered.";
     private final String INPUT_ERROR = "Couldn't find plant. Please try again!";
     private final String INPUT_EMPTY = "You must enter something. Please try again!";
+
+    List<Vegetation> listOfPlants = new ArrayList<>();
     private double fluidAmount;
     private String nameOfClass;
+
+    //Constructor för Main klassen
+    public Main() {
+        listOfPlants.add(new Cactus("Igge", 0.2));
+        listOfPlants.add(new PalmTree("Laura", 0.5));
+        listOfPlants.add(new PalmTree("Olof", 1));
+        listOfPlants.add(new Carnivorous("Meatloaf", 0.7));
+    }
 
     public static void main(String[] args) {
         Main m = new Main();
@@ -21,12 +33,6 @@ public class Main {
     }
 
     private boolean greenestHotel(Main m) {
-        Vegetation[] listOfPlants = {
-            new Cactus("Igge", 0.2),
-            new PalmTree("Laura", 0.5),
-            new PalmTree("Olof", 1),
-            new Carnivorous("Meatloaf", 0.7)
-        };
 
         String input = JOptionPane.showInputDialog(null, m.INPUT_MSG,"Greenest hotel", JOptionPane.QUESTION_MESSAGE);
 
@@ -48,7 +54,7 @@ public class Main {
         return true;
     }
 
-    private void findPlant(Vegetation[] plantList, String input) {
+    private void findPlant(List<Vegetation> plantList, String input) {
         for (Vegetation plant : plantList) {
             if(input.equalsIgnoreCase(plant.getName())) {
                 fluidAmount = plant.waterPlant();
