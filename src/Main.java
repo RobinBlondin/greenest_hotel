@@ -65,8 +65,7 @@ public class Main {
 
     private String getFoodSource(String nameOfClass) {
         try {
-            TypeOfPlant pt = TypeOfPlant.valueOf(nameOfClass);
-            return pt.getFoodSource();
+            return TypeOfPlant.valueOf(nameOfClass).getFoodSource();
         } catch (NullPointerException e) {
             return "";
         }
