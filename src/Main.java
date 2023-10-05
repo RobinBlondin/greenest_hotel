@@ -53,7 +53,7 @@ public class Main {
             String foodSource = m.getFoodSource(nameOfClass);
             m.outputMessage(fluidAmount, foodSource);
         } catch(IllegalArgumentException e) {
-            m.errorMessage(m.INPUT_ERROR);
+            m.errorMessage(m.INPUT_NOT_FOUND);
         }
         return true;
     }
