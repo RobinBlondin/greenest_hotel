@@ -34,7 +34,7 @@ public class Main {
     /**
      * The main program. Prints out the result and returns a boolean based on specific conditions.
      * @param m Object of Main class
-     * @return boolean
+     * @return boolean depending on the content of input string.
      */
     private boolean greenestHotel(Main m) {
 
@@ -51,7 +51,7 @@ public class Main {
 
         try {
             String foodSource = m.getFoodSource(nameOfClass);
-            m.outputMessage(fluidAmount, foodSource);
+            m.outputMessage(foodSource);
         } catch(IllegalArgumentException e) {
             m.errorMessage(m.INPUT_NOT_FOUND);
         }
@@ -59,9 +59,8 @@ public class Main {
     }
 
     /**
-     * Helper method to iterate through a list and matching input to objects name.
-     * @param plantList first parameter
-     * @param input second parameter
+     * Helper method to iterate through a list of objects and matching input to name field of each element.
+     * @param input String representing a name.
      */
     private void findPlant(List<Vegetation> plantList, String input) {
         for (Vegetation plant : plantList) {
@@ -74,8 +73,8 @@ public class Main {
 
     /**
      * Converts a string to an enum and returns the getFoodSource constant.
-     * @param nameOfClass String
-     * @return String
+     * @param nameOfClass String representing an enum constant
+     * @return Enum constant argument
      */
     private String getFoodSource(String nameOfClass) {
         try {
@@ -87,10 +86,9 @@ public class Main {
 
     /**
      * Outputs a message dialog with set instance variables as arguments
-     * @param fluidAmount first parameter
-     * @param foodSource  second parameter
+     * @param foodSource String containing plants food source
      */
-    private void outputMessage(double fluidAmount, String foodSource) {
+    private void outputMessage(String foodSource) {
         if (fluidAmount == 0 || foodSource.isEmpty()) {
             throw new IllegalArgumentException();
         }
