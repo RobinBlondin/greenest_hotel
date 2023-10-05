@@ -38,7 +38,7 @@ public class Main {
      */
     private boolean greenestHotel(Main m) {
 
-        String input = JOptionPane.showInputDialog(null, m.INPUT_MSG,"Greenest hotel", JOptionPane.QUESTION_MESSAGE);
+        String input = JOptionPane.showInputDialog(null, m.INPUT_MESSAGE,"Greenest hotel", JOptionPane.QUESTION_MESSAGE);
 
         if (input == null) {
             return false;
