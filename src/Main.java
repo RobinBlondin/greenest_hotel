@@ -14,7 +14,7 @@ public class Main {
 
     public Main() {
         listOfPlants.add(new Cactus("Igge", 0.2));
-        listOfPlants.add(new PalmTree("Laura", 0.5));
+        listOfPlants.add(new PalmTree("Laura", 5));
         listOfPlants.add(new PalmTree("Olof", 1));
         listOfPlants.add(new Carnivorous("Meatloaf", 0.7));
     }
