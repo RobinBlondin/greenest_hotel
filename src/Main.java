@@ -99,7 +99,7 @@ public class Main {
     }
 
     private void errorMessage(String message) {
-        JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, message, "Input error", JOptionPane.ERROR_MESSAGE);
     }
 
     /**
