@@ -5,8 +5,8 @@ import java.util.List;
 public class Main {
     //Encapsulation with private instance variables and private helper methods.
     private final String INPUT_MSG = "Please enter the name of the plant to be watered.";
-    private final String INPUT_ERROR = "Couldn't find plant. Please try again!";
-    private final String INPUT_EMPTY = "You must enter something. Please try again!";
+    private final String INPUT_ERROR = "No such plant is currently staying at the hotel. Please try again!";
+    private final String INPUT_EMPTY = "Input field empty. Please try again!";
 
     List<Vegetation> listOfPlants = new ArrayList<>();
     private double fluidAmount;
