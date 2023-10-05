@@ -1,5 +1,5 @@
 public abstract class Vegetation implements Waterable {
-    //inkapsling
+    //Encapsulation
     private String name;
     private double height;
 

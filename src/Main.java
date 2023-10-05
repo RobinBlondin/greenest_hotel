@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    //inkapsling
+    //Encapsulation with private instance variables and private helper methods.
     private final String INPUT_MSG = "Please enter the name of the plant to be watered.";
     private final String INPUT_ERROR = "Couldn't find plant. Please try again!";
     private final String INPUT_EMPTY = "You must enter something. Please try again!";
@@ -12,7 +12,6 @@ public class Main {
     private double fluidAmount;
     private String nameOfClass;
 
-    //Constructor för Main klassen
     public Main() {
         listOfPlants.add(new Cactus("Igge", 0.2));
         listOfPlants.add(new PalmTree("Laura", 0.5));
@@ -32,6 +31,11 @@ public class Main {
         }
     }
 
+    /**
+     * The main program. Prints out the result and returns a boolean based on specific conditions.
+     * @param m Object of Main class
+     * @return boolean
+     */
     private boolean greenestHotel(Main m) {
 
         String input = JOptionPane.showInputDialog(null, m.INPUT_MSG,"Greenest hotel", JOptionPane.QUESTION_MESSAGE);
@@ -54,6 +58,11 @@ public class Main {
         return true;
     }
 
+    /**
+     * Helper method to iterate through a list and matching input to objects name.
+     * @param plantList first parameter
+     * @param input second parameter
+     */
     private void findPlant(List<Vegetation> plantList, String input) {
         for (Vegetation plant : plantList) {
             if(input.equalsIgnoreCase(plant.getName())) {
@@ -63,6 +72,11 @@ public class Main {
         }
     }
 
+    /**
+     * Converts a string to an enum and returns the getFoodSource constant.
+     * @param nameOfClass String
+     * @return String
+     */
     private String getFoodSource(String nameOfClass) {
         try {
             return TypeOfPlant.valueOf(nameOfClass).getFoodSource();
@@ -71,6 +85,11 @@ public class Main {
         }
     }
 
+    /**
+     * Outputs a message dialog with set instance variables as arguments
+     * @param fluidAmount first parameter
+     * @param foodSource  second parameter
+     */
     private void outputMessage(double fluidAmount, String foodSource) {
         if (fluidAmount == 0 || foodSource.isEmpty()) {
             throw new IllegalArgumentException();
@@ -83,6 +102,10 @@ public class Main {
         JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
+    /**
+     * Clear specific instance variables.
+     * @param m object of Main
+     */
     private void clearGlobals(Main m) {
         m.fluidAmount = 0;
         m.nameOfClass = null;
