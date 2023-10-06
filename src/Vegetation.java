@@ -1,4 +1,4 @@
-public abstract class Vegetation implements Waterable {
+public abstract class Vegetation implements Feedable {
     //Encapsulation
     private String name;
     private double height;
